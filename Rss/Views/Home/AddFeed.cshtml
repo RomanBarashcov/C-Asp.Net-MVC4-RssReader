@@ -1,0 +1,27 @@
+﻿@model Rss.Models.Feed
+@{
+    ViewBag.Title = "AddFeed";
+}
+<div class="container">
+    <div class="Content">
+
+        <div class="ContentAddFeed">
+            <h2 class="H2AddFeed">New Feed</h2>
+            @using (Html.BeginForm("AddNewFeed", "Home", FormMethod.Post))
+            {
+                <p>@Html.LabelFor(model => model.Title)
+          
+                @Html.EditorFor(model => model.Title)</p>
+                <br />
+                <p>@Html.LabelFor(model => model.Link)
+                
+                @Html.EditorFor(model => model.Link)</p>
+                <br /><br />
+
+                <input class="btn btn-success btnAdd" type="submit" value="Add" />    <a class="btn btn-primary btnCencel" href="http://localhost:33687/">Cencel</a>
+
+            }
+           
+        </div>
+</div>
+</div>

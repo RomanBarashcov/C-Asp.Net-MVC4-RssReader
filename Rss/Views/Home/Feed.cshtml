@@ -1,0 +1,41 @@
+﻿@{
+    ViewBag.Title = "Feed";
+}
+
+<div class="container">
+    <div class="Content">
+
+    <ul class="nav nav-pills">
+        <li class="active">
+            
+            <a href="http://localhost:33687/">Home</a>
+            
+        </li>
+    </ul>
+
+        <h2 class="H2Position">News</h2>
+
+        <table class="table">
+            <tr>
+                <td><p>News</p></td>
+
+                <td><p>Action</p></td>
+                <td></td>
+            </tr>
+
+            @foreach (Rss.Models.NewsItem u in ViewBag.Items)
+            {
+                <tr>
+
+                    <td><p><a href="@u.Link">@u.Body</a></p></td>
+                    <td><p><a class="btn btn-danger" href="/Home/DeleteFeed/@u.NewsItemId/@u.FeedId">Delete</a></p></td>
+                    
+
+                </tr>
+            }
+        </table>
+        <p><a class="btn btn-danger" href="/Home/Delete/@ViewBag.ID">Delete All</a></p>
+    
+            
+</div>
+</div>

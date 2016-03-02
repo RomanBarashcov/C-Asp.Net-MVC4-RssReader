@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+<div class="container">
+    <div class="Content">
+    <h2 class="H2Position">Rss Reader</h2>
+
+    <table class="table">
+        <tr>
+            <td><p>Feed Name</p></td>
+            <td><p>Url</p></td>
+            <td><p>Action</p></td>
+            <td></td>
+        </tr>
+        @foreach (var b in ViewBag.Items)
+        {
+            <tr>
+                <td><p>@b.Title</p></td>
+                <td><p><a href="Home/Feed/@b.FeedId">@b.Link</a></p></td>
+                <td><p><a class="btn btn-danger" href="/Home/Delete/@b.FeedId">Delete</a></p></td>
+                
+            </tr>
+        }
+        </table>
+   
+    <form action="/Home/AddFeed/" method="post">
+        <p><input class="btn btn-success" type="submit" name="add" value="Add feed" /></p>
+    </form>
+ </div>
+</div>
